@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser"; 
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // In-memory data storelearning
@@ -94,6 +94,6 @@ app.delete('/posts/:id', (req,res)=>{
   
 });
 
-app.listen(port, () => {
-  console.log(`API is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`API is running at http://localhost:${PORT}`);
 });

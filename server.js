@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const port = 4000;
+const PORT = process.env.PORT || 4000;
 const API_URL = "http://localhost:3000";
 
 app.use(express.static("public"));
@@ -73,6 +73,6 @@ app.get("/api/posts/delete/:id", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Backend server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Backend server is running on http://localhost:${PORT}`);
 });
