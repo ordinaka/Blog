@@ -51,7 +51,7 @@ app.get("/edit/:id", async (req, res) => {
 });
 
 // Create a new post
-app.post("/api/posts", async (req, res) => {
+app.post("/posts", async (req, res) => {
   try {
     const baseUrl = `${req.protocol}://${req.get("host")}`;
     await axios.post(`${baseUrl}/api/posts`, req.body);
@@ -62,7 +62,7 @@ app.post("/api/posts", async (req, res) => {
 });
 
 // Route to submit the edit post using patch
-app.post("/api/posts/:id", async (req, res) => {
+app.post("/posts/:id", async (req, res) => {
   try {
     const baseUrl = `${req.protocol}://${req.get("host")}`;
      await axios.patch(
